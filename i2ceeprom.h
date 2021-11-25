@@ -79,7 +79,7 @@ void eeprom_init(eeprom *a, uint8_t dev_address, uint16_t size) {
  * @param  datasize: Size of the data array
  * @return None
  */
-void eeprom_write(eeprom *a, uint16_t mem_address, uint8_t *data, uint16_t datasize) {
+void eeprom_write(eeprom *a, uint32_t mem_address, uint8_t *data, uint16_t datasize) {
     uint8_t actual_address;
     uint16_t pos_in_page;
     uint16_t bytes_written = 0;
@@ -214,7 +214,7 @@ void eeprom_write(eeprom *a, uint16_t mem_address, uint8_t *data, uint16_t datas
         pos_in_page = mem_address % 256;                                            // 256 byte page write
         while (bytes_written < datasize) {
             // fixed device address
-            i2c_start_wait(a->eeprom_address + I2C_WRITE);                          // set the device address
+            actual_address = (a->eeprom_address | ((mem_address >> 16) & 1));       // set the device address from the MSB bits
             i2c_write((mem_address & 0xFF00) >> 8);                                 // write the MSB address first
             i2c_write((mem_address & 0x00FF) + (256 * pos_in_page));                // write the LSB address next
 
