@@ -80,7 +80,7 @@ void eeprom_init(eeprom *a, uint8_t dev_address, uint16_t size) {
  * @return None
  */
 void eeprom_write(eeprom *a, uint32_t mem_address, uint8_t *data, uint16_t datasize) {
-    uint8_t actual_address;
+    uint8_t i2caddress;
     uint16_t pos_in_page;
     uint16_t bytes_written = 0;
     uint16_t pages_written = 0;
@@ -104,8 +104,8 @@ void eeprom_write(eeprom *a, uint32_t mem_address, uint8_t *data, uint16_t datas
     } else if (a->eeprom_size == 4) {
         pos_in_page = mem_address % 16;                                             // 16 byte page write
         while (bytes_written < datasize) {
-            actual_address = (a->eeprom_address | ((mem_address >> 8) & 1));        // set the device address from the MSB bits
-            i2c_start_wait(actual_address + I2C_WRITE);                             // set the device address
+            i2caddress = (a->eeprom_address | ((mem_address >> 8) & 1));        // set the device address from the MSB bits
+            i2c_start_wait(i2caddress + I2C_WRITE);                             // set the device address
             i2c_write(((uint8_t) mem_address) + (16 * pos_in_page));                // set the write address (one byte address)
 
             // write one page of data
@@ -121,8 +121,8 @@ void eeprom_write(eeprom *a, uint32_t mem_address, uint8_t *data, uint16_t datas
     } else if (a->eeprom_size == 8) {
         pos_in_page = mem_address % 16;                                             // 16 byte page write
         while (bytes_written < datasize) {
-            actual_address = (a->eeprom_address | ((mem_address >> 8) & 3));        // set the device address from the MSB bits
-            i2c_start_wait(actual_address + I2C_WRITE);                             // set the device address
+            i2caddress = (a->eeprom_address | ((mem_address >> 8) & 3));        // set the device address from the MSB bits
+            i2c_start_wait(i2caddress + I2C_WRITE);                             // set the device address
             i2c_write(((uint8_t) mem_address) + (16 * pos_in_page));                // set the write address (one byte address)
 
             // write one page of data
@@ -138,8 +138,8 @@ void eeprom_write(eeprom *a, uint32_t mem_address, uint8_t *data, uint16_t datas
     } else if (a->eeprom_size == 16) {
         pos_in_page = mem_address % 16;                                             // 16 byte page write
         while (bytes_written < datasize) {
-            actual_address = (a->eeprom_address | ((mem_address >> 8) & 7));        // set the device address from the MSB bits
-            i2c_start_wait(actual_address + I2C_WRITE);                             // set the device address
+            i2caddress = (a->eeprom_address | ((mem_address >> 8) & 7));        // set the device address from the MSB bits
+            i2c_start_wait(i2caddress + I2C_WRITE);                             // set the device address
             i2c_write(((uint8_t) mem_address) + (16 * pos_in_page));                // set the write address (one byte address)
 
             // write one page of data
@@ -214,7 +214,7 @@ void eeprom_write(eeprom *a, uint32_t mem_address, uint8_t *data, uint16_t datas
         pos_in_page = mem_address % 256;                                            // 256 byte page write
         while (bytes_written < datasize) {
             // fixed device address
-            actual_address = (a->eeprom_address | ((mem_address >> 16) & 1));       // set the device address from the MSB bits
+            i2caddress = (a->eeprom_address | ((mem_address >> 16) & 1));       // set the device address from the MSB bits
             i2c_write((mem_address & 0xFF00) >> 8);                                 // write the MSB address first
             i2c_write((mem_address & 0x00FF) + (256 * pos_in_page));                // write the LSB address next
 
@@ -241,7 +241,7 @@ void eeprom_write(eeprom *a, uint32_t mem_address, uint8_t *data, uint16_t datas
  * @return None
  */
 void eeprom_read(eeprom *a, uint16_t mem_address, uint8_t *data, uint16_t datasize) {
-    uint8_t actual_address;
+    uint8_t i2caddress;
     uint16_t bytes_read = 0;
 
     if (a->eeprom_size == 1 || a->eeprom_size == 2) {
@@ -256,11 +256,11 @@ void eeprom_read(eeprom *a, uint16_t mem_address, uint8_t *data, uint16_t datasi
         }
         *(data + bytes_read) = i2c_readNak();                                       // Read the last byte
     } else if (a->eeprom_size == 4) {
-        actual_address = (a->eeprom_address | ((mem_address >> 8) & 1));
-        i2c_start_wait(actual_address + I2C_WRITE);
+        i2caddress = a->eeprom_address | ((uint8_t) ((mem_address >> 7) & 0x2));
+        i2c_start_wait(i2caddress + I2C_WRITE);
         i2c_write((uint8_t) mem_address);
         i2c_stop();
-        i2c_start_wait(actual_address + I2C_READ);
+        i2c_start_wait(i2caddress + I2C_READ);
 
         while(bytes_read < datasize - 1) {
             *(data + bytes_read) = i2c_readAck();                                   // Read datasize - 1 bytes
@@ -268,11 +268,11 @@ void eeprom_read(eeprom *a, uint16_t mem_address, uint8_t *data, uint16_t datasi
         }
         *(data + bytes_read) = i2c_readNak();                                       // Read the last byte
     } else if (a->eeprom_size == 8) {
-        actual_address = (a->eeprom_address | ((mem_address >> 8) & 3));
-        i2c_start_wait(actual_address + I2C_WRITE);
-        i2c_write((uint8_t) mem_address + bytes_read);
+        i2caddress = a->eeprom_address | ((uint8_t) ((mem_address >> 7) & 0x6));
+        i2c_start_wait(i2caddress + I2C_WRITE);
+        i2c_write((uint8_t) mem_address);
         i2c_stop();
-        i2c_start_wait(actual_address + I2C_READ);
+        i2c_start_wait(i2caddress + I2C_READ);
 
         while(bytes_read < datasize - 1) {
             *(data + bytes_read) = i2c_readAck();                                   // Read datasize - 1 bytes
@@ -280,11 +280,11 @@ void eeprom_read(eeprom *a, uint16_t mem_address, uint8_t *data, uint16_t datasi
         }
         *(data + bytes_read) = i2c_readNak();                                       // Read the last byte
     } else if (a->eeprom_size == 16) {
-        actual_address = (a->eeprom_address | ((mem_address >> 8) & 7));
-        i2c_start_wait(actual_address + I2C_WRITE);
+        i2caddress = a->eeprom_address | ((uint8_t) ((mem_address >> 7) & 0xE));
+        i2c_start_wait(i2caddress + I2C_WRITE);
         i2c_write((uint8_t) mem_address);
         i2c_stop();
-        i2c_start_wait(actual_address + I2C_READ);
+        i2c_start_wait(i2caddress + I2C_READ);
 
         while(bytes_read < datasize - 1) {
             *(data + bytes_read) = i2c_readAck();                                   // Read datasize - 1 bytes
