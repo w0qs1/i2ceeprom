@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>I2C EEPROM: C:/Users/mnsan/OneDrive/Documents/PlatformIO/Projects/i2ceeprom/src/i2ceeprom.h File Reference</title>
+<title>I2C EEPROM Documentation</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -59,12 +59,18 @@ Functions</h2></td></tr>
 <tr class="memitem:a0ed1c05b32c54f7077bf6db02f44af7a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2ceeprom_8h.html#a0ed1c05b32c54f7077bf6db02f44af7a">eeprom_init</a> (<a class="el" href="structeeprom.html">eeprom</a> *a, uint8_t dev_address, uint16_t size)</td></tr>
 <tr class="memdesc:a0ed1c05b32c54f7077bf6db02f44af7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">To set the EEPROM properties.  <a href="i2ceeprom_8h.html#a0ed1c05b32c54f7077bf6db02f44af7a">More...</a><br /></td></tr>
 <tr class="separator:a0ed1c05b32c54f7077bf6db02f44af7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21fc4648f730cd20737ef0f3b8cba52d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2ceeprom_8h.html#a21fc4648f730cd20737ef0f3b8cba52d">eeprom_write</a> (<a class="el" href="structeeprom.html">eeprom</a> *a, uint16_t mem_address, uint8_t *data, uint16_t datasize)</td></tr>
-<tr class="memdesc:a21fc4648f730cd20737ef0f3b8cba52d"><td class="mdescLeft">&#160;</td><td class="mdescRight">To write a byte array of data.  <a href="i2ceeprom_8h.html#a21fc4648f730cd20737ef0f3b8cba52d">More...</a><br /></td></tr>
-<tr class="separator:a21fc4648f730cd20737ef0f3b8cba52d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af45ce5f42394b3cf9deda84e998ec2aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2ceeprom_8h.html#af45ce5f42394b3cf9deda84e998ec2aa">eeprom_write</a> (<a class="el" href="structeeprom.html">eeprom</a> *a, uint32_t mem_address, uint8_t *data, uint16_t datasize)</td></tr>
+<tr class="memdesc:af45ce5f42394b3cf9deda84e998ec2aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">To write a byte array of data.  <a href="i2ceeprom_8h.html#af45ce5f42394b3cf9deda84e998ec2aa">More...</a><br /></td></tr>
+<tr class="separator:af45ce5f42394b3cf9deda84e998ec2aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08d0981277073f04df2aeb8025f41a7d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2ceeprom_8h.html#a08d0981277073f04df2aeb8025f41a7d">eeprom_read</a> (<a class="el" href="structeeprom.html">eeprom</a> *a, uint16_t mem_address, uint8_t *data, uint16_t datasize)</td></tr>
 <tr class="memdesc:a08d0981277073f04df2aeb8025f41a7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">To read a byte array.  <a href="i2ceeprom_8h.html#a08d0981277073f04df2aeb8025f41a7d">More...</a><br /></td></tr>
 <tr class="separator:a08d0981277073f04df2aeb8025f41a7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58d29fc17eafa181e93a7a9df3bd537a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2ceeprom_8h.html#a58d29fc17eafa181e93a7a9df3bd537a">eeprom_byte_write</a> (<a class="el" href="structeeprom.html">eeprom</a> *a, uint16_t mem_address, uint8_t data)</td></tr>
+<tr class="memdesc:a58d29fc17eafa181e93a7a9df3bd537a"><td class="mdescLeft">&#160;</td><td class="mdescRight">To write a byte.  <a href="i2ceeprom_8h.html#a58d29fc17eafa181e93a7a9df3bd537a">More...</a><br /></td></tr>
+<tr class="separator:a58d29fc17eafa181e93a7a9df3bd537a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab62af8d62dac8c31be4cd638a1c7f418"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2ceeprom_8h.html#ab62af8d62dac8c31be4cd638a1c7f418">eeprom_byte_read</a> (<a class="el" href="structeeprom.html">eeprom</a> *a, uint16_t mem_address, uint8_t *data)</td></tr>
+<tr class="memdesc:ab62af8d62dac8c31be4cd638a1c7f418"><td class="mdescLeft">&#160;</td><td class="mdescRight">To read a byte.  <a href="i2ceeprom_8h.html#ab62af8d62dac8c31be4cd638a1c7f418">More...</a><br /></td></tr>
+<tr class="separator:ab62af8d62dac8c31be4cd638a1c7f418"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >A Library for Interfacing AVR with 24CXX EEPROMs. </p>
@@ -84,19 +90,26 @@ Functions</h2></td></tr>
 <div class="line"><span class="preprocessor">#define EEPROM_ADDRESS 0xA0</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">void</span>) {</div>
-<div class="line">    <a class="code hl_struct" href="structeeprom.html">eeprom</a> eep1;</div>
+<div class="line">    <a class="code hl_struct" href="structeeprom.html">eeprom</a> eep1;                                <span class="comment">// Create a new EEPROM instance</span></div>
 <div class="line">    <a class="code hl_function" href="i2ceeprom_8h.html#a0ed1c05b32c54f7077bf6db02f44af7a">eeprom_init</a>(&amp;eep1, EEPROM_ADDRESS, 8);      <span class="comment">// AT24C08 -&gt; 8Kbit EEPROM</span></div>
 <div class="line"> </div>
 <div class="line">    uint8_t data_write[] = {0xCA, 0xFE, 0xBA, 0xBE};</div>
-<div class="line">    <a class="code hl_function" href="i2ceeprom_8h.html#a21fc4648f730cd20737ef0f3b8cba52d">eeprom_write</a>(&amp;eep1, 0x00, data_write, 4);   <span class="comment">// Write 4 bytes</span></div>
+<div class="line">    <a class="code hl_function" href="i2ceeprom_8h.html#af45ce5f42394b3cf9deda84e998ec2aa">eeprom_write</a>(&amp;eep1, 0x00, data_write, 4);   <span class="comment">// Write 4 bytes</span></div>
 <div class="line"> </div>
 <div class="line">    uint8_t data_read[4];</div>
 <div class="line">    <a class="code hl_function" href="i2ceeprom_8h.html#a08d0981277073f04df2aeb8025f41a7d">eeprom_read</a>(&amp;eep1, 0x00, data_read, 4);     <span class="comment">// Read 4 bytes</span></div>
+<div class="line"> </div>
+<div class="line">    uint8_t data_byte;</div>
+<div class="line">    <a class="code hl_function" href="i2ceeprom_8h.html#ab62af8d62dac8c31be4cd638a1c7f418">eeprom_byte_read</a>(&amp;eep1, 0x00, &amp;data_byte);  <span class="comment">// Read a single byte</span></div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_function" href="i2ceeprom_8h.html#a58d29fc17eafa181e93a7a9df3bd537a">eeprom_byte_write</a>(&amp;eep1, 0x100, data_byte); <span class="comment">// Write a single byte</span></div>
 <div class="line">}</div>
-<div class="ttc" id="ai2ceeprom_8h_html_a08d0981277073f04df2aeb8025f41a7d"><div class="ttname"><a href="i2ceeprom_8h.html#a08d0981277073f04df2aeb8025f41a7d">eeprom_read</a></div><div class="ttdeci">void eeprom_read(eeprom *a, uint16_t mem_address, uint8_t *data, uint16_t datasize)</div><div class="ttdoc">To read a byte array.</div><div class="ttdef"><b>Definition:</b> i2ceeprom.h:243</div></div>
-<div class="ttc" id="ai2ceeprom_8h_html_a0ed1c05b32c54f7077bf6db02f44af7a"><div class="ttname"><a href="i2ceeprom_8h.html#a0ed1c05b32c54f7077bf6db02f44af7a">eeprom_init</a></div><div class="ttdeci">void eeprom_init(eeprom *a, uint8_t dev_address, uint16_t size)</div><div class="ttdoc">To set the EEPROM properties.</div><div class="ttdef"><b>Definition:</b> i2ceeprom.h:68</div></div>
-<div class="ttc" id="ai2ceeprom_8h_html_a21fc4648f730cd20737ef0f3b8cba52d"><div class="ttname"><a href="i2ceeprom_8h.html#a21fc4648f730cd20737ef0f3b8cba52d">eeprom_write</a></div><div class="ttdeci">void eeprom_write(eeprom *a, uint16_t mem_address, uint8_t *data, uint16_t datasize)</div><div class="ttdoc">To write a byte array of data.</div><div class="ttdef"><b>Definition:</b> i2ceeprom.h:82</div></div>
-<div class="ttc" id="astructeeprom_html"><div class="ttname"><a href="structeeprom.html">eeprom</a></div><div class="ttdoc">This creates a new EEPROM instance.</div><div class="ttdef"><b>Definition:</b> i2ceeprom.h:55</div></div>
+<div class="ttc" id="ai2ceeprom_8h_html_a08d0981277073f04df2aeb8025f41a7d"><div class="ttname"><a href="i2ceeprom_8h.html#a08d0981277073f04df2aeb8025f41a7d">eeprom_read</a></div><div class="ttdeci">void eeprom_read(eeprom *a, uint16_t mem_address, uint8_t *data, uint16_t datasize)</div><div class="ttdoc">To read a byte array.</div><div class="ttdef"><b>Definition:</b> i2ceeprom.h:248</div></div>
+<div class="ttc" id="ai2ceeprom_8h_html_a0ed1c05b32c54f7077bf6db02f44af7a"><div class="ttname"><a href="i2ceeprom_8h.html#a0ed1c05b32c54f7077bf6db02f44af7a">eeprom_init</a></div><div class="ttdeci">void eeprom_init(eeprom *a, uint8_t dev_address, uint16_t size)</div><div class="ttdoc">To set the EEPROM properties.</div><div class="ttdef"><b>Definition:</b> i2ceeprom.h:73</div></div>
+<div class="ttc" id="ai2ceeprom_8h_html_a58d29fc17eafa181e93a7a9df3bd537a"><div class="ttname"><a href="i2ceeprom_8h.html#a58d29fc17eafa181e93a7a9df3bd537a">eeprom_byte_write</a></div><div class="ttdeci">void eeprom_byte_write(eeprom *a, uint16_t mem_address, uint8_t data)</div><div class="ttdoc">To write a byte.</div><div class="ttdef"><b>Definition:</b> i2ceeprom.h:322</div></div>
+<div class="ttc" id="ai2ceeprom_8h_html_ab62af8d62dac8c31be4cd638a1c7f418"><div class="ttname"><a href="i2ceeprom_8h.html#ab62af8d62dac8c31be4cd638a1c7f418">eeprom_byte_read</a></div><div class="ttdeci">void eeprom_byte_read(eeprom *a, uint16_t mem_address, uint8_t *data)</div><div class="ttdoc">To read a byte.</div><div class="ttdef"><b>Definition:</b> i2ceeprom.h:362</div></div>
+<div class="ttc" id="ai2ceeprom_8h_html_af45ce5f42394b3cf9deda84e998ec2aa"><div class="ttname"><a href="i2ceeprom_8h.html#af45ce5f42394b3cf9deda84e998ec2aa">eeprom_write</a></div><div class="ttdeci">void eeprom_write(eeprom *a, uint32_t mem_address, uint8_t *data, uint16_t datasize)</div><div class="ttdoc">To write a byte array of data.</div><div class="ttdef"><b>Definition:</b> i2ceeprom.h:87</div></div>
+<div class="ttc" id="astructeeprom_html"><div class="ttname"><a href="structeeprom.html">eeprom</a></div><div class="ttdoc">This creates a new EEPROM instance.</div><div class="ttdef"><b>Definition:</b> i2ceeprom.h:60</div></div>
 </div><!-- fragment --> </div><h2 class="groupheader">Typedef Documentation</h2>
 <a id="ad02feff5356d61adbb095bc5da105c59" name="ad02feff5356d61adbb095bc5da105c59"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad02feff5356d61adbb095bc5da105c59">&#9670;&nbsp;</a></span>eeprom</h2>
@@ -116,6 +129,96 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ab62af8d62dac8c31be4cd638a1c7f418" name="ab62af8d62dac8c31be4cd638a1c7f418"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab62af8d62dac8c31be4cd638a1c7f418">&#9670;&nbsp;</a></span>eeprom_byte_read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void eeprom_byte_read </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structeeprom.html">eeprom</a> *&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>mem_address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>To read a byte. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*a</td><td>Address of the EEPROM instance </td></tr>
+    <tr><td class="paramname">mem_address</td><td>Location of the byte in EEPROM </td></tr>
+    <tr><td class="paramname">*data</td><td>Address of the data byte </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>None </dd></dl>
+
+</div>
+</div>
+<a id="a58d29fc17eafa181e93a7a9df3bd537a" name="a58d29fc17eafa181e93a7a9df3bd537a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58d29fc17eafa181e93a7a9df3bd537a">&#9670;&nbsp;</a></span>eeprom_byte_write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void eeprom_byte_write </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structeeprom.html">eeprom</a> *&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>mem_address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>To write a byte. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*a</td><td>Address of the EEPROM instance </td></tr>
+    <tr><td class="paramname">mem_address</td><td>Address for the byte to be stored </td></tr>
+    <tr><td class="paramname">data</td><td>Byte data </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>None </dd></dl>
+
+</div>
+</div>
 <a id="a0ed1c05b32c54f7077bf6db02f44af7a" name="a0ed1c05b32c54f7077bf6db02f44af7a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0ed1c05b32c54f7077bf6db02f44af7a">&#9670;&nbsp;</a></span>eeprom_init()</h2>
 
@@ -214,8 +317,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a21fc4648f730cd20737ef0f3b8cba52d" name="a21fc4648f730cd20737ef0f3b8cba52d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21fc4648f730cd20737ef0f3b8cba52d">&#9670;&nbsp;</a></span>eeprom_write()</h2>
+<a id="af45ce5f42394b3cf9deda84e998ec2aa" name="af45ce5f42394b3cf9deda84e998ec2aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af45ce5f42394b3cf9deda84e998ec2aa">&#9670;&nbsp;</a></span>eeprom_write()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -229,7 +332,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>mem_address</em>, </td>
         </tr>
         <tr>
